@@ -1,6 +1,6 @@
 import {type QuestionItem} from "../types/questionItem.ts";
 import {useState} from "react";
-import styles from './quiz.module.css'
+import styles from '../styles/quiz.module.css'
 
 interface QuestionItems{
     QuestionItemList: QuestionItem[]
@@ -17,10 +17,7 @@ function Quiz({QuestionItemList}: QuestionItems){
     const currentPossibleAnswers: string[] = currentQuestion.possibleAnswers;
     const correctAnswerIndex: number = currentQuestion.correctAnswerIndex;
 
-
-
     function handleAnswerClicked(): void {
-        // TODO: Transitioning to result component
 
         // When to move on to the next question
         const showAnswersDuration: number = 3000;
@@ -35,7 +32,6 @@ function Quiz({QuestionItemList}: QuestionItems){
 
     }
 
-    // TODO : Classname to possibleAnswers
     return(
         <div className={styles.container}>
             <h1>Veebiviktoriin</h1>

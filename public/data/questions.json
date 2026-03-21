@@ -1,0 +1,13 @@
+[
+  {
+    "questionText": "Mis on Eesti pealinn?",
+    "possibleAnswers": ["Tallinn", "Tartu", "Pärnu", "Narva"],
+    "correctAnswerIndex": 0
+  },
+  {
+    "questionText": "Kes on Eesti rahvuslind?",
+    "possibleAnswers": ["Rasvatihane", "Leevike", "Suitsupääsuke", "Kuldnokk"],
+    "correctAnswerIndex": 2
+  }
+
+]
