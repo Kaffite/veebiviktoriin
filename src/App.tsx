@@ -7,12 +7,12 @@ function App() {
       [
          {
          questionText: "Mis on Eesti pealinn?",
-         possibleAnswers: ["Tallinn", "Tartu", "Narva"],
+         possibleAnswers: ["Tallinn", "Tartu", "Pärnu", "Narva"],
          correctAnswerIndex: 0
          },
          {
            questionText: "Mis on Eesti rahvuslind?",
-           possibleAnswers: ["Rasvatihane", "Leevike", "Suitsupääsuke"],
+           possibleAnswers: ["Rasvatihane", "Leevike", "Suitsupääsuke", "Kuldnokk"],
            correctAnswerIndex: 2
          }
       ];
