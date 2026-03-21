@@ -11,7 +11,7 @@ function App() {
          correctAnswerIndex: 0
          },
          {
-           questionText: "Mis on Eesti rahvuslind?",
+           questionText: "Kes on Eesti rahvuslind?",
            possibleAnswers: ["Rasvatihane", "Leevike", "Suitsupääsuke", "Kuldnokk"],
            correctAnswerIndex: 2
          }
@@ -19,7 +19,8 @@ function App() {
 
   return (
       <>
-        <Quiz QuestionItemList={QuestionItems}/>
+          <div className="header"></div>
+          <Quiz QuestionItemList={QuestionItems}/>
       </>
   );
 }

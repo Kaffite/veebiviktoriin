@@ -23,7 +23,7 @@ function Quiz({QuestionItemList}: QuestionItems){
         // TODO: Transitioning to result component
 
         // When to move on to the next question
-        const showAnswersDuration: number = 2500;
+        const showAnswersDuration: number = 3000;
         setShowAnswers(true);
 
         setTimeout(() => {
