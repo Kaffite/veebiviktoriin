@@ -8,6 +8,10 @@
     "questionText": "Kes on Eesti rahvuslind?",
     "possibleAnswers": ["Rasvatihane", "Leevike", "Suitsupääsuke", "Kuldnokk"],
     "correctAnswerIndex": 2
+  },
+  {
+    "questionText": "Mis on Eesti rahvuslill?",
+    "possibleAnswers": ["Nurmenukk", "Rukkilill", "Roos", "Pojeng"],
+    "correctAnswerIndex": 1
   }
-
 ]

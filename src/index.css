@@ -1,15 +1,15 @@
-
-.header{
+.header, .footer{
     background-image: url("/public/favicon.ico");
-    filter: blur(1px);
     position:fixed;
-    margin-bottom: 5px;
-    top:0;
-    left:0;
     width: 100%;
+    left: 0;
     height: 8%;
-
-
-
+    z-index: -1;
+}
+.header{
+    top:0;
 }
 
+.footer{
+    bottom:0;
+}

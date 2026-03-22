@@ -6,6 +6,7 @@ function App() {
       <>
           <div className="header"></div>
           <Controller />
+          <div className="footer"></div>
       </>
   );
 }
