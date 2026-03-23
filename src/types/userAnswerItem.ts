@@ -1,5 +1,5 @@
 export interface UserAnswerItem{
-    questionText: string,
-    userAnswer: string,
-    correctAnswer: boolean
+    question: string,
+    answer: string,
+    answerCorrect: boolean
 }

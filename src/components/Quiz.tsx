@@ -7,10 +7,11 @@ import styles from '../styles/quiz.module.css'
 interface Props{
     questions: QuestionItem[]
     onAddAnswer: (newAnswer: UserAnswerItem) => void
+    finishQuiz: () => void
 }
 
 
-function Quiz({questions, onAddAnswer}: Props){
+function Quiz({questions, onAddAnswer, finishQuiz}: Props){
 
     const [questionIndex, setQuestionIndex] = useState<number>(0);
     const [showAnswers, setShowAnswers] = useState<boolean>(false);
@@ -22,17 +23,17 @@ function Quiz({questions, onAddAnswer}: Props){
 
     function handleAnswerClicked(answerText: string, answerIndex: number): void {
         setShowAnswers(true);
-
         const newAnswer: UserAnswerItem = {
-            questionText: currentQuestionText,
-            userAnswer: answerText,
-            correctAnswer: (answerIndex === correctAnswerIndex)
+            question: currentQuestionText,
+            answer: answerText,
+            answerCorrect: (answerIndex === correctAnswerIndex)
         }
         onAddAnswer(newAnswer);
     }
 
     function nextQuestion() {
         setShowAnswers(false);
+        if (questionIndex === questions.length - 1) finishQuiz();
         setQuestionIndex(i => i + 1);
     }
 

@@ -1,0 +1,19 @@
+th, td{
+    padding: 15px;
+    border: 1px solid black;
+}
+table{
+    text-align: center;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.correctAnswer{
+    color: #12965a;
+}
+
+.incorrectAnswer{
+    color: #ed332d;
+}
+
