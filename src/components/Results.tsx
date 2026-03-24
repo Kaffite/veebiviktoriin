@@ -1,7 +1,18 @@
 import {type UserAnswerItem} from "../types/userAnswerItem.ts";
 import styles from '../styles/results.module.css'
 
-function Results({userAnswers}: {userAnswers: UserAnswerItem[]}){
+interface Props{
+    userAnswers: UserAnswerItem[]
+    points: number
+}
+
+function Results({userAnswers, points}: Props){
+
+    let personalizedMsg: string = "Pead veel Eesti rahvussümboleid õppima.";
+    if (points === (userAnswers.length))
+        personalizedMsg = "Tead Eesti rahvussümboleid väga hästi, tubli!";
+    else if (points > 0.5 * (userAnswers.length))
+        personalizedMsg = "Tead mõnda Eesti rahvussümbolit, kuid mitte kõiki. Natuke pead veel õppima."
 
     return(
         <div className="container">
@@ -23,6 +34,8 @@ function Results({userAnswers}: {userAnswers: UserAnswerItem[]}){
                         </tr>
                     ))}
             </table>
+            <p className="points">Sinu punktid: {points}</p>
+            <p className={styles.resultText}>{personalizedMsg}</p>
         </div>
     );
 }

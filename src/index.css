@@ -11,7 +11,17 @@ h1{
             6px 5px 1px #CCCCCC, 5px 6px 1px #EEEEEE,
             7px 6px 1px #CCCCCC;
 }
-
+th, td{
+    font-size: 1.3em;
+    padding: 15px;
+    border: 1px solid black;
+}
+table{
+    text-align: center;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
 button{
     margin-top: 40px;
     font-size: 1.3em;
@@ -19,13 +29,17 @@ button{
     min-width: 15%;
     border-radius: 10px;
 }
+.points{
+    text-align: center;
+    font-size: 1.5em;
+}
 
 .header, .footer{
     background-image: url("/favicon.ico");
     position:fixed;
     width: 100%;
     left: 0;
-    height: 8%;
+    height: 40px;
     z-index: -1;
 }
 .header{

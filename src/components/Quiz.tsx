@@ -8,10 +8,12 @@ interface Props{
     questions: QuestionItem[]
     onAddAnswer: (newAnswer: UserAnswerItem) => void
     finishQuiz: () => void
+    points: number
+    increasePoints: () => void
 }
 
 
-function Quiz({questions, onAddAnswer, finishQuiz}: Props){
+function Quiz({questions, onAddAnswer, finishQuiz, points, increasePoints}: Props){
 
     const [questionIndex, setQuestionIndex] = useState<number>(0);
     const [showAnswers, setShowAnswers] = useState<boolean>(false);
@@ -23,12 +25,14 @@ function Quiz({questions, onAddAnswer, finishQuiz}: Props){
 
     function handleAnswerClicked(answerText: string, answerIndex: number): void {
         setShowAnswers(true);
+        const answerIsCorrect: boolean = (answerIndex === correctAnswerIndex)
         const newAnswer: UserAnswerItem = {
             question: currentQuestionText,
             answer: answerText,
-            answerCorrect: (answerIndex === correctAnswerIndex)
+            answerCorrect: answerIsCorrect
         }
         onAddAnswer(newAnswer);
+        if (answerIsCorrect) increasePoints();
     }
 
     function nextQuestion() {
@@ -54,6 +58,7 @@ function Quiz({questions, onAddAnswer, finishQuiz}: Props){
                 {answer}
                 </p>
                 ))}
+            <p className="points">Sinu punktid: {points}</p>
             <button onClick={nextQuestion}
                     style={{display: (showAnswers)
                     ? "block"

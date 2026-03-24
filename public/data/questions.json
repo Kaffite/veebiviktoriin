@@ -1,7 +1,7 @@
 [
   {
-    "questionText": "Mis on Eesti pealinn?",
-    "possibleAnswers": ["Tallinn", "Tartu", "Pärnu", "Narva"],
+    "questionText": "Kes on Eesti rahvusloom?",
+    "possibleAnswers": ["Hunt", "Rebane", "Põder", "Metskits"],
     "correctAnswerIndex": 0
   },
   {
@@ -10,8 +10,13 @@
     "correctAnswerIndex": 2
   },
   {
+    "questionText": "Kes on Eesti rahvuskala?",
+    "possibleAnswers": ["Haug", "Vikerforell", "Ahven", "Räim"],
+    "correctAnswerIndex": 3
+  },
+  {
     "questionText": "Mis on Eesti rahvuslill?",
-    "possibleAnswers": ["Nurmenukk", "Rukkilill", "Roos", "Pojeng"],
-    "correctAnswerIndex": 1
+    "possibleAnswers": ["Nurmenukk", "Pojeng", "Roos", "Rukkilill"],
+    "correctAnswerIndex": 3
   }
 ]
