@@ -8,11 +8,14 @@ interface Props{
 
 function Results({userAnswers, points}: Props){
 
-    let personalizedMsg: string = "Pead veel Eesti rahvussümboleid õppima.";
+    let personalizedMsg: string = "Tulemus: ";
     if (points === (userAnswers.length))
-        personalizedMsg = "Tead Eesti rahvussümboleid väga hästi, tubli!";
+        personalizedMsg += "Teate Eesti rahvussümboleid väga hästi, tubli!";
     else if (points > 0.5 * (userAnswers.length))
-        personalizedMsg = "Tead mõnda Eesti rahvussümbolit, kuid mitte kõiki. Natuke pead veel õppima."
+        personalizedMsg += "Teate mõnda Eesti rahvussümbolit, kuid mitte kõiki. Natuke peate veel õppima."
+    else
+        personalizedMsg += "Peate veel Eesti rahvussümboleid õppima.";
+
 
     return(
         <div className="container">
@@ -20,7 +23,7 @@ function Results({userAnswers, points}: Props){
             <table>
                 <tr>
                     <th>Küsimus</th>
-                    <th>Vastus</th>
+                    <th>Teie vastus</th>
                     <th>Tulemus</th>
                 </tr>
                     {userAnswers.map(item => (
@@ -34,7 +37,7 @@ function Results({userAnswers, points}: Props){
                         </tr>
                     ))}
             </table>
-            <p className="points">Sinu punktid: {points}</p>
+            <p className="points">Teie punktid: {points}</p>
             <p className={styles.resultText}>{personalizedMsg}</p>
         </div>
     );

@@ -18,21 +18,24 @@ function Quiz({questions, onAddAnswer, finishQuiz, points, increasePoints}: Prop
     const [questionIndex, setQuestionIndex] = useState<number>(0);
     const [showAnswers, setShowAnswers] = useState<boolean>(false);
 
+
     const currentQuestion: QuestionItem = questions[questionIndex];
     const currentQuestionText: string = currentQuestion.questionText;
     const currentPossibleAnswers: string[] = currentQuestion.possibleAnswers;
     const correctAnswerIndex: number = currentQuestion.correctAnswerIndex;
 
     function handleAnswerClicked(answerText: string, answerIndex: number): void {
-        setShowAnswers(true);
-        const answerIsCorrect: boolean = (answerIndex === correctAnswerIndex)
-        const newAnswer: UserAnswerItem = {
-            question: currentQuestionText,
-            answer: answerText,
-            answerCorrect: answerIsCorrect
+        if (!showAnswers) {
+            const answerIsCorrect: boolean = (answerIndex === correctAnswerIndex)
+            const newAnswer: UserAnswerItem = {
+                question: currentQuestionText,
+                answer: answerText,
+                answerCorrect: answerIsCorrect
+            }
+            onAddAnswer(newAnswer);
+            if (answerIsCorrect && !showAnswers) increasePoints();
         }
-        onAddAnswer(newAnswer);
-        if (answerIsCorrect) increasePoints();
+        setShowAnswers(true);
     }
 
     function nextQuestion() {
@@ -58,12 +61,15 @@ function Quiz({questions, onAddAnswer, finishQuiz, points, increasePoints}: Prop
                 {answer}
                 </p>
                 ))}
-            <p className="points">Sinu punktid: {points}</p>
+            <p className="points">Teie punktid: {points}</p>
             <button onClick={nextQuestion}
                     style={{display: (showAnswers)
                     ? "block"
                     : "none"}}
-            >Järgmine küsimus</button>
+            >{questionIndex == questions.length - 1
+                ? "Tulemused"
+                : "Järgmine küsimus"}
+                </button>
         </div>
     );
 }
