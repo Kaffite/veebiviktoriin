@@ -20,6 +20,7 @@ function Controller() {
    const addUserAnswer = (newAnswer: UserAnswerItem) :void => {
        setUserAnswers([...userAnswers, newAnswer]);
     }
+
     const finishQuiz = () => {setQuizFinished(true)};
    const addPoint = () => setPoints(p => p + 1);
 
