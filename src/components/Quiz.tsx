@@ -40,8 +40,11 @@ function Quiz({questions, onAddAnswer, finishQuiz, points, increasePoints}: Prop
 
     function nextQuestion() {
         setShowAnswers(false);
-        if (questionIndex === questions.length - 1) finishQuiz();
-        setQuestionIndex(i => i + 1);
+        if (questionIndex === questions.length - 1) {
+            finishQuiz();
+            setQuestionIndex(0)
+        }
+        else setQuestionIndex(i => i + 1);
     }
 
     return(

@@ -4,9 +4,10 @@ import styles from '../styles/results.module.css'
 interface Props{
     userAnswers: UserAnswerItem[]
     points: number
+    resetQuiz: () => void;
 }
 
-function Results({userAnswers, points}: Props){
+function Results({userAnswers, points, resetQuiz}: Props){
 
     let personalizedMsg: string = "Tulemus: ";
     if (points === (userAnswers.length))
@@ -39,6 +40,7 @@ function Results({userAnswers, points}: Props){
             </table>
             <p className="points">Teie punktid: {points}</p>
             <p className={styles.resultText}>{personalizedMsg}</p>
+            <button onClick={resetQuiz}>Alusta uuesti</button>
         </div>
     );
 }

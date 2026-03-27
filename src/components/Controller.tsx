@@ -17,9 +17,16 @@ function Controller() {
         fetchQuestions().then(data => setQuestions(data));
     }, []);
 
-   const addUserAnswer = (newAnswer: UserAnswerItem) :void => {
-       setUserAnswers([...userAnswers, newAnswer]);
+    function addUserAnswer (newAnswer: UserAnswerItem): void{
+        setUserAnswers([...userAnswers, newAnswer]);
     }
+
+    function resetQuiz(): void {
+        setUserAnswers([]);
+        setPoints(0);
+        setQuizFinished(false);
+    }
+
 
     const finishQuiz = () => {setQuizFinished(true)};
    const addPoint = () => setPoints(p => p + 1);
@@ -29,7 +36,7 @@ function Controller() {
     return(
       <div>
           {quizFinished
-              ? <Results userAnswers={userAnswers} points={points}/>
+              ? <Results userAnswers={userAnswers} points={points} resetQuiz={resetQuiz} />
               : <Quiz questions={questions} onAddAnswer={addUserAnswer}
                       finishQuiz={finishQuiz} points={points} increasePoints={addPoint}/>
           }

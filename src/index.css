@@ -22,6 +22,7 @@ table{
     margin-left: auto;
     margin-right: auto;
 }
+
 button{
     margin-top: 40px;
     font-size: 1.3em;
@@ -29,11 +30,16 @@ button{
     min-width: 15%;
     border-radius: 10px;
 }
+
 .points{
     text-align: center;
     font-size: 1.5em;
 }
-
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .header, .footer{
     background-image: url("/favicon.ico");
     position:fixed;
@@ -45,7 +51,21 @@ button{
 .header{
     top:0;
 }
-
 .footer{
     bottom:0;
 }
+
+@media (max-width: 600px){
+    h2, .points{
+        font-size: 1.3em;
+    }
+    th, td{
+        padding: 8px;
+        font-size: 1em;
+    }
+    button{
+        margin-top: 15px;
+        font-size: 1em;
+    }
+}
+

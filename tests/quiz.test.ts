@@ -43,3 +43,22 @@ test('Personalized text is correct', async ({ page }) => {
   await expect(page.getByText("Tulemus:")).toHaveText("Tulemus: Teate Eesti rahvussümboleid väga hästi, tubli!");
 });
 
+
+test('Restarting Quiz resets points', async ({ page }) => {
+  await page.goto('');
+  await page.getByText('Hunt').click();
+  await page.getByRole('button', { name: 'Järgmine küsimus' }).click();
+  await page.getByText('Leevike').click();
+  await page.getByRole('button', { name: 'Järgmine küsimus' }).click();
+  await page.getByText('Räim').click();
+  await page.getByRole('button', { name: 'Järgmine küsimus' }).click();
+  await page.getByText('Pojeng').click();
+  await page.getByRole('button', { name: 'Tulemused' }).click();
+
+  // Expect 2 points
+  await expect(page.getByText("Teie punktid: ")).toHaveText("Teie punktid: 2");
+  await page.getByRole('button', { name: 'Alusta uuesti' }).click();
+
+  // After reseting the quiz, expect points to be 0
+  await expect(page.getByText("Teie punktid: ")).toHaveText("Teie punktid: 0");
+});
