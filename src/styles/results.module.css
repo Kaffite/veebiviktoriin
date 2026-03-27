@@ -1,6 +1,6 @@
 .resultText{
     text-align: center;
-    font-size: 1.3em;
+    font-size: 1.5em;
     margin-top: 20px;
 }
 
@@ -12,3 +12,11 @@
     color: #ed332d;
 }
 
+
+/*Large desktop screens*/
+@media (min-width: 1600px) {
+
+    .resultText{
+        font-size: 1.9em;
+    }
+}

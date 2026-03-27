@@ -30,8 +30,18 @@
     transition: background-color 2s;
 }
 
+/*Phones*/
 @media (max-width: 600px){
     .answer, .correctAnswer, .wrongAnswer{
         min-width: 40%;
+    }
+}
+
+/*Large desktop screens*/
+@media (min-width: 1600px) {
+
+    .answer, .correctAnswer, .wrongAnswer {
+        font-size: 2em;
+        margin: 15px;
     }
 }

@@ -13,7 +13,7 @@ function Results({userAnswers, points, resetQuiz}: Props){
     if (points === (userAnswers.length))
         personalizedMsg += "Teate Eesti rahvussümboleid väga hästi, tubli!";
     else if (points > 0.5 * (userAnswers.length))
-        personalizedMsg += "Teate mõnda Eesti rahvussümbolit, kuid mitte kõiki. Natuke peate veel õppima."
+        personalizedMsg += "Teate mõnda Eesti rahvussümbolit, kuid mitte kõiki."
     else
         personalizedMsg += "Peate veel Eesti rahvussümboleid õppima.";
 
